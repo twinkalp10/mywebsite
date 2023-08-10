@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTheme } from "next-themes";
 
 const skills = [
   { skill: "HTML", icon: "/htmlBlackIcon.png" },
@@ -14,6 +15,7 @@ const skills = [
 ];
 
 const AboutSection = () => {
+  const { theme } = useTheme();
   return (
     <section id="about">
       <div className="py-12 pb-12 md:pt-12 md:pb-48">
@@ -35,6 +37,19 @@ const AboutSection = () => {
               a code, drawing, reading, and travelling, I am always seeking a
               new opportunities to learn and grow.
             </p>
+            <div className="mt-4">
+              <a
+                href="/Twinkal-resume.pdf"
+                target="_blank"
+                className={`bg-slate-100 px-2 py-1 rounded-lg ${
+                  theme === "dark"
+                    ? "bg-white text-black"
+                    : "bg-gray-200 text-black"
+                } `}
+              >
+                Resume
+              </a>
+            </div>
           </div>
           <div className="md:w-1/2">
             <h1 className="text-center font-bold text-2xl md:text-left">
