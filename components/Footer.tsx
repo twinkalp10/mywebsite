@@ -3,6 +3,7 @@ import React from "react";
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 
 const Footer = () => {
   const { theme } = useTheme();
@@ -12,28 +13,28 @@ const Footer = () => {
       <div className="flex flex-col md:space-x-8 gap-4 items-center md:flex-row md:justify-between">
         <div>@2023 Twinkal Patel</div>
         <div className="flex justify-center items-center space-x-4">
-          <a
+          <Link
             target="_blank"
             href="https://github.com/twinkalp10"
             className="cursor-pointer"
           >
             <GitHubLogoIcon className="w-6 h-6" />
-          </a>
-          <a
+          </Link>
+          <Link
             target="_blank"
             href="https://www.linkedin.com/in/twinkal-patel-1952b2150"
             className="cursor-pointer"
           >
             <LinkedInLogoIcon className="w-6 h-6" />
-          </a>
-          <a
+          </Link>
+          <Link
             target="_blank"
             href="mailto:twinkal.work@outlook.com"
             className="cursor-pointer"
           >
             <EnvelopeIcon className="w-7 h-7" />
-          </a>
-          <a
+          </Link>
+          <Link
             href="/Twinkal-resume.pdf"
             target="_blank"
             className={`bg-slate-100 px-2 py-1 rounded-lg ${
@@ -43,7 +44,7 @@ const Footer = () => {
             } `}
           >
             Resume
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

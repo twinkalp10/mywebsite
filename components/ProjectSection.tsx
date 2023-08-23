@@ -6,21 +6,14 @@ import { ExternalLinkIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 
 const projects = [
   {
-    title: "Portfolio Website",
+    title: "OPEN UI - Design System",
     description:
-      "A personal website built with Next.js and Tailwind CSS. It is a static website hosted on Vercel.",
+      "An Open Source component library built with React and TypeScript.",
     image: "/laptop.jpg",
     github: "",
     demo: "",
-  },
-
-  {
-    title: "Movie Search App",
-    description:
-      "A movie search app built with React and Tailwind CSS. It uses the TMDB API to fetch movies.",
-    image: "/laptop.jpg",
-    github: "",
-    demo: "",
+    about:
+      "It is a collection of accessible, reusable, and composable React components for building design systems, websites, and web applications. You can use it as a whole, or pick and choose the components you want to use. It is as easy like copy-paste. You can give it different style and variant as per your need. ",
   },
 ];
 
@@ -57,6 +50,9 @@ const ProjectSection = () => {
                     </Link>
                   </div>
                 </div>
+              </div>
+              <div>
+                <p className="mt-8 text-base">{project.about}</p>
               </div>
             </div>
           ))}

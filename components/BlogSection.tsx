@@ -56,7 +56,7 @@ const BlogSection = () => {
     <section id="blogs">
       <div className="py-12 pb-12 md:pt-36 md:pb-32">
         <h1 className="text-3xl font-bold text-center">
-          Hello! It's my Blog Space
+          Hello! It&apos;s my Blog Space
         </h1>
         <hr className="w-8 h-1 mx-auto mt-4 mb-8 bg-purple-500 border-0 rounded"></hr>
         <p className="text-center mb-8">

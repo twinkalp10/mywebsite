@@ -45,8 +45,8 @@ const Navbar = () => {
 
   return (
     <header
-      className={`w-full mx-auto shadow fixed top-0 z-50 bg-white ${
-        theme === "dark" && "bg-black"
+      className={`w-full mx-auto shadow fixed top-0 z-50 ${
+        theme === "dark" ? "bg-black" : "bg-white "
       }`}
     >
       <div
@@ -81,7 +81,7 @@ const Navbar = () => {
               <Link
                 to={item.page}
                 key={item.label}
-                className={` hover:text-gray-400 duration-500 `}
+                className={` hover:text-gray-400 duration-500 cursor-pointer`}
               >
                 {item.label}
               </Link>

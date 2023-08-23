@@ -28,14 +28,14 @@ const AboutSection = () => {
             </h1>
 
             <p className="leading-7 mt-3">
-              Welcome to my corner of the internet! I'm a passionate and
+              Welcome to my corner of the internet! I&apos;m a passionate and
               self-taught React developer. My name is{" "}
               <span className="font-bold">Twinkal Patel</span>, In the world of
-              web development, I'm having primary focus on making dynamic user
-              interfaces using front-end technologies. <br /> <br /> I have a
-              wide range of hobbies and passions that keep me busy. From writing
-              a code, drawing, reading, and travelling, I am always seeking a
-              new opportunities to learn and grow.
+              web development, I&apos;m having primary focus on making dynamic
+              user interfaces using front-end technologies. <br /> <br />{" "}
+              I&apos;ave a wide range of hobbies and passions that keep me busy.
+              From writing a code, drawing, reading, and travelling, I am always
+              seeking a new opportunities to learn and grow.
             </p>
             <div className="mt-4">
               <a
