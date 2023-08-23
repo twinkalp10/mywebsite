@@ -21,7 +21,7 @@ const HeroSection = () => {
             UI
           </p>
           <p className="text-base mt-8">
-            I possess one year of practical experience in front-end development,
+            I possess 1+ year of practical experience in front-end development,
             demonstrating proficiency in <br /> HTML, CSS, JavaScript, and
             React.
           </p>
