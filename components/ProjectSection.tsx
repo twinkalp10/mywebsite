@@ -10,8 +10,8 @@ const projects = [
     description:
       "An Open Source component library built with React and TypeScript.",
     image: "/laptop.jpg",
-    github: "",
-    demo: "",
+    github: "https://github.com/twinkalp10/open-ui",
+    demo: "https://open-ui-design.vercel.app/",
     about:
       "It is a collection of accessible, reusable, and composable React components for building design systems, websites, and web applications. You can use it as a whole, or pick and choose the components you want to use. It is as easy like copy-paste. You can give it different style and variant as per your need. ",
   },
