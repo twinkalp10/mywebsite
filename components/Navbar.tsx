@@ -46,7 +46,7 @@ const Navbar = () => {
   return (
     <header
       className={`w-full mx-auto shadow fixed top-0 z-50 ${
-        theme === "dark" ? "bg-black" : "bg-white "
+        theme === "dark" ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
       <div
