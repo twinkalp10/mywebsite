@@ -9,7 +9,7 @@ const projects = [
     title: "OPEN UI - Design System",
     description:
       "An Open Source component library built with React and TypeScript.",
-    image: "/laptop.jpg",
+    image: "/openuipic.png",
     github: "https://github.com/twinkalp10/open-ui",
     demo: "https://open-ui-design.vercel.app/",
     about:
@@ -31,8 +31,8 @@ const ProjectSection = () => {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    width={300}
-                    height={200}
+                    width={400}
+                    height={300}
                     className="rounded-xl shadow-xl"
                   />
                 </div>
@@ -42,10 +42,10 @@ const ProjectSection = () => {
                   </h1>
                   <p> {project.description} </p>
                   <div className="flex space-x-4 mt-4">
-                    <Link href={project.github}>
+                    <Link href={project.github} target="_blank">
                       <GitHubLogoIcon className="w-6 h-6" />
                     </Link>
-                    <Link href={project.demo}>
+                    <Link href={project.demo} target="_blank">
                       <ExternalLinkIcon className="w-6 h-6" />
                     </Link>
                   </div>
