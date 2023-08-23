@@ -77,10 +77,9 @@ const Navbar = () => {
           } `}
         >
           {NAV_ITEMS.map((item) => (
-            <li className="my-3 md:my-0">
+            <li className="my-3 md:my-0" key={item.label}>
               <Link
                 to={item.page}
-                key={item.label}
                 className={` hover:text-gray-400 duration-500 cursor-pointer`}
               >
                 {item.label}
