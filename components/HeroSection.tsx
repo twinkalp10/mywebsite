@@ -22,8 +22,18 @@ const HeroSection = () => {
           </p>
           <p className="text-base mt-8">
             I possess 1+ year of practical experience in front-end development,
-            demonstrating proficiency in <br /> HTML, CSS, JavaScript, and
-            React.
+            demonstrating proficiency in HTML, CSS, JavaScript, and React.
+            Currently working on my own project to enhance my skills. I am
+            developing an open source design system for reusable components. You
+            can check it out at{" "}
+            <Link
+              href="https://open-ui-design.vercel.app/"
+              target="_blank"
+              className="text-purple-500"
+            >
+              <i>OPEN UI</i>
+            </Link>
+            .
           </p>
           <div className="flex justify-center items-center space-x-4 mt-4">
             <Link

@@ -35,7 +35,7 @@ const Footer = () => {
             <EnvelopeIcon className="w-7 h-7" />
           </Link>
           <Link
-            href="/Twinkal-resume.pdf"
+            href="https://rxresu.me/r/95kBML8L"
             target="_blank"
             className={`bg-slate-100 px-2 py-1 rounded-lg ${
               theme === "dark"

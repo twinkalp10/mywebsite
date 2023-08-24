@@ -4,6 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ExternalLinkIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 
+const underverseLink = () => {
+  return <Link href="https://twitter.com/giantleapgg">`Underverse Game`</Link>;
+};
+
 const projects = [
   {
     title: "OPEN UI - Design System",
@@ -14,6 +18,14 @@ const projects = [
     demo: "https://open-ui-design.vercel.app/",
     about:
       "It is a collection of accessible, reusable, and composable React components for building design systems, websites, and web applications. You can use it as a whole, or pick and choose the components you want to use. It is as easy like copy-paste. You can give it different style and variant as per your need. ",
+  },
+  {
+    title: "Underverse",
+    description: "Fully on-chain game made with blockchain technology.",
+    image: "/underverse.png",
+    github: "",
+    demo: "https://giantleap.gg/underverse",
+    about: `Underverse is a Web3 game made with blockchain technology. I got a valuable experience of working with Web3 Technology in my previous company. In this game, Users can sign in with their Web3 accounts to play this game. The game allows users to buy weapons, sell them, make a team, find other users, attack enemies and get ranks.`,
   },
 ];
 
@@ -26,14 +38,14 @@ const ProjectSection = () => {
         <div className="flex flex-col space-y-12 mt-12">
           {projects.map((project) => (
             <div key={project.title}>
-              <div className="flex flex-col space-y-2 md:flex-row md:space-x-12">
+              <div className="flex flex-col items-start justify-center space-y-2 md:flex-row md:space-x-12">
                 <div className="w-1/2">
                   <Image
                     src={project.image}
                     alt={project.title}
                     width={400}
                     height={300}
-                    className="rounded-xl shadow-xl"
+                    className="rounded-xl shadow-xl "
                   />
                 </div>
                 <div>

@@ -39,7 +39,7 @@ const AboutSection = () => {
             </p>
             <div className="mt-4">
               <a
-                href="/Twinkal-resume.pdf"
+                href="https://rxresu.me/r/95kBML8L"
                 target="_blank"
                 className={`bg-slate-100 px-2 py-1 rounded-lg ${
                   theme === "dark"
