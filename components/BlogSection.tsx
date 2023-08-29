@@ -6,7 +6,7 @@ const Blogs = [
   {
     title: "var, let and const in javascript",
     image: "/letvarconst.png",
-    link: "https://twinkalp10.hashnode.dev/promise-in-javascript",
+    link: "https://twinkalp10.hashnode.dev/var-let-and-const",
   },
   {
     title: "How Promise works?",
@@ -16,38 +16,38 @@ const Blogs = [
   {
     title: "What is Closure?",
     image: "closure.png",
-    link: "https://twinkalp10.hashnode.dev/promise-in-javascript",
+    link: "https://twinkalp10.hashnode.dev/closure",
   },
   {
     title: "Higher Order Functions!",
     image: "/HOF.png",
-    link: "https://twinkalp10.hashnode.dev/promise-in-javascript",
+    link: "https://twinkalp10.hashnode.dev/higher-order-function",
   },
   {
     title: "Class Concept in JS",
     image: "class.png",
-    link: "https://twinkalp10.hashnode.dev/promise-in-javascript",
+    link: "https://twinkalp10.hashnode.dev/classes",
   },
   {
     title: "What are map, filter and reduce methods?",
     image: "/mapfilterreduce.png",
-    link: "https://twinkalp10.hashnode.dev/promise-in-javascript",
+    link: "https://twinkalp10.hashnode.dev/map-reduce-and-filter",
   },
 
   {
     title: "In this way Hosting works!",
     image: "hosting.png",
-    link: "https://twinkalp10.hashnode.dev/promise-in-javascript",
+    link: "https://twinkalp10.hashnode.dev/hoisting-in-javascript",
   },
   {
     title: "Let's go with Async/Await!",
     image: "async.png",
-    link: "https://twinkalp10.hashnode.dev/promise-in-javascript",
+    link: "https://twinkalp10.hashnode.dev/asyncawait-in-javascript",
   },
   {
     title: "call, apply, bind in javascript",
     image: "callApplyBind.png",
-    link: "https://twinkalp10.hashnode.dev/promise-in-javascript",
+    link: "https://twinkalp10.hashnode.dev/call-bind-and-apply-in-javascript",
   },
 ];
 const BlogSection = () => {
