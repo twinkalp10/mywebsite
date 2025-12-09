@@ -11,7 +11,7 @@ const Footer = () => {
     <footer id="contact" className="max-w-3xl mx-auto px-4 py-8 sm:px-6">
       <hr className="w-full h-0.5 mx-auto my-8 bg-neutral-200" />
       <div className="flex flex-col md:space-x-8 gap-4 items-center md:flex-row md:justify-between">
-        <div>@2023 Twinkal Patel</div>
+        <div>Thank you for visiting my website!</div>
         <div className="flex justify-center items-center space-x-4">
           <Link
             target="_blank"
@@ -29,14 +29,15 @@ const Footer = () => {
           </Link>
           <Link
             target="_blank"
-            href="mailto:twinkal.work@outlook.com"
+            href="mailto:twinkalp1525@gmail.com"
             className="cursor-pointer"
           >
             <EnvelopeIcon className="w-7 h-7" />
           </Link>
           <Link
-            href="https://rxresu.me/r/95kBML8L"
+            href="/Twinkal_P.pdf"
             target="_blank"
+            rel="noopener noreferrer"
             className={`bg-slate-100 px-2 py-1 rounded-lg ${
               theme === "dark"
                 ? "bg-white text-black"

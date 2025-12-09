@@ -3,15 +3,15 @@ import React from "react";
 import { useTheme } from "next-themes";
 
 const skills = [
-  { skill: "HTML", icon: "/htmlBlackIcon.png" },
-  { skill: "CSS", icon: "/cssBlackIcon.png" },
-  { skill: "JavaScript", icon: "/jsBlackIcon.png" },
   { skill: "React", icon: "/reactIcon.png" },
   { skill: "Next.js", icon: "/nextIcon.png" },
+  { skill: "Node.js", icon: "/nodejsIcon.png" },
+  { skill: "Express.js", icon: "/expressIcon.png" },
+  { skill: "Elysia.js", icon: "/elysiaIcon.png" },
   { skill: "TypeScript", icon: "/typescriptBlackIcon.png" },
   { skill: "Tailwind CSS", icon: "/tailwindcssBlackIcon.png" },
+  { skill: "JavaScript", icon: "/jsBlackIcon.png" },
   { skill: "GitHub", icon: "/githubIcon.png" },
-  { skill: "Figma", icon: "/figmaBlackIcon.png" },
 ];
 
 const AboutSection = () => {
@@ -28,19 +28,14 @@ const AboutSection = () => {
             </h1>
 
             <p className="leading-7 mt-3">
-              Welcome to my corner of the internet! I&apos;m a passionate and
-              self-taught React developer. My name is{" "}
-              <span className="font-bold">Twinkal Patel</span>, In the world of
-              web development, I&apos;m having primary focus on making dynamic
-              user interfaces using front-end technologies. <br /> <br />{" "}
-              I&apos;ave a wide range of hobbies and passions that keep me busy.
-              From writing a code, drawing, reading, and travelling, I am always
-              seeking a new opportunities to learn and grow.
+              Hey there! I&apos;m <span className="font-bold">Twinkal Patel</span>, a developer who loves turning ideas into real, working products. With 2.8+ years of building web apps using React, Next.js, and Node.js, I&apos;ve learned that good code is just the start. <br /> <br />
+              Right now, I&apos;m deep into <span className="font-bold">Reloop</span>, an open source email infrastructure I&apos;m building from scratch. When I&apos;m not coding, you&apos;ll find me sketching, reading, or planning my next travel adventure.
             </p>
             <div className="mt-4">
               <a
-                href="https://rxresu.me/r/95kBML8L"
+                href="/Twinkal_P.pdf"
                 target="_blank"
+                rel="noopener noreferrer"
                 className={`bg-slate-100 px-2 py-1 rounded-lg ${
                   theme === "dark"
                     ? "bg-white text-black"

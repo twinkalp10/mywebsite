@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { useTheme } from "next-themes";
 import {
@@ -39,14 +39,21 @@ const NAV_ITEMS: Array<NavItemProps> = [
 ];
 
 const Navbar = () => {
-  const { theme, setTheme, systemTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   const { openNav, setOpenNav } = useNavContext();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDark = mounted && resolvedTheme === "dark";
 
   return (
     <header
       className={`w-full mx-auto shadow fixed top-0 z-50 ${
-        theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+        isDark ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
       <div
@@ -88,7 +95,7 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="absolute right-8 top-6">
-          {theme === "dark" ? (
+          {isDark ? (
             <button>
               <SunIcon className="w-6 h-6" onClick={() => setTheme("light")} />
             </button>
