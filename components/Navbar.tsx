@@ -16,32 +16,16 @@ interface NavItemProps {
 }
 
 const NAV_ITEMS: Array<NavItemProps> = [
-  {
-    label: "Home",
-    page: "home",
-  },
-  {
-    label: "About",
-    page: "about",
-  },
-  {
-    label: "Projects",
-    page: "projects",
-  },
-  {
-    label: "Blogs",
-    page: "blogs",
-  },
-  {
-    label: "Contact",
-    page: "contact",
-  },
+  { label: "Home", page: "home" },
+  { label: "About", page: "about" },
+  { label: "Projects", page: "projects" },
+  { label: "Blogs", page: "blogs" },
+  { label: "Contact", page: "contact" },
 ];
 
 const Navbar = () => {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-
   const { openNav, setOpenNav } = useNavContext();
 
   useEffect(() => {
@@ -51,26 +35,21 @@ const Navbar = () => {
   const isDark = mounted && resolvedTheme === "dark";
 
   return (
-    <header
-      className={`w-full mx-auto shadow fixed top-0 z-50 ${
-        isDark ? "bg-black text-white" : "bg-white text-black"
-      }`}
-    >
-      <div
-        className={`md:flex md:px-10 px-7 py-5 items-center justify-between`}
-      >
+    <header className="w-full mx-auto fixed top-0 z-50 glass border-b border-neutral-200/20">
+      <div className="max-w-6xl mx-auto md:flex md:px-8 px-6 py-4 items-center justify-between">
         <div>
-          <div>
-            <Link href="/" to="home">
-              <h2 className="text-2xl font-bold">Twinkal Patel</h2>
-            </Link>
-          </div>
+          <Link href="/" to="home" className="cursor-pointer">
+            <h2 className="text-xl font-semibold tracking-tight">
+              Twinkal<span className="text-accent">.</span>
+            </h2>
+          </Link>
         </div>
+        
         <div
-          className="absolute right-16 top-6 cursor-pointer md:hidden"
+          className="absolute right-16 top-4 cursor-pointer md:hidden"
           onClick={() => setOpenNav(!openNav)}
         >
-          <button>
+          <button className="p-1">
             {openNav ? (
               <Bars3Icon className="w-6 h-6" />
             ) : (
@@ -78,32 +57,36 @@ const Navbar = () => {
             )}
           </button>
         </div>
-        <ul
-          className={`md:flex md:items-center gap-12 md:mr-12 transition-all duration-500 ${
-            openNav && "hidden"
-          } `}
-        >
-          {NAV_ITEMS.map((item) => (
-            <li className="my-3 md:my-0" key={item.label}>
+        
+        <div className="flex items-center gap-8">
+          <nav
+            className={`md:flex md:items-center gap-8 transition-all duration-300 ${
+              openNav && "hidden"
+            }`}
+          >
+            {NAV_ITEMS.map((item) => (
               <Link
+                key={item.label}
                 to={item.page}
-                className={` hover:text-gray-400 duration-500 cursor-pointer`}
+                smooth={true}
+                duration={500}
+                className="block py-2 md:py-0 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors cursor-pointer"
               >
                 {item.label}
               </Link>
-            </li>
-          ))}
-        </ul>
-        <div className="absolute right-8 top-6">
-          {isDark ? (
-            <button>
-              <SunIcon className="w-6 h-6" onClick={() => setTheme("light")} />
-            </button>
-          ) : (
-            <button>
-              <MoonIcon className="w-6 h-6" onClick={() => setTheme("dark")} />
-            </button>
-          )}
+            ))}
+          </nav>
+          
+          <button
+            onClick={() => setTheme(isDark ? "light" : "dark")}
+            className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+          >
+            {isDark ? (
+              <SunIcon className="w-5 h-5 text-yellow-500" />
+            ) : (
+              <MoonIcon className="w-5 h-5 text-neutral-600" />
+            )}
+          </button>
         </div>
       </div>
     </header>

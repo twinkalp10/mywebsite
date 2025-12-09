@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 const skills = [
@@ -15,52 +15,58 @@ const skills = [
 ];
 
 const AboutSection = () => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDark = mounted && resolvedTheme === "dark";
+
   return (
     <section id="about">
-      <div className="py-12 pb-12 md:pt-12 md:pb-48">
-        <h1 className="text-3xl font-bold text-center">About Me !</h1>
-        <hr className="w-8 h-1 mx-auto my-4 bg-purple-500 border-0 rounded"></hr>
-        <div className="flex flex-col md:flex-row md:space-x-10 gap-10 items-stretch justify-center mt-8">
-          <div className="md:w-1/2">
-            <h1 className="text-center font-bold text-2xl md:text-left">
-              Get to know me
-            </h1>
+      <div className="py-16 md:py-24 max-w-5xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            About <span className="text-gradient">Me</span>
+          </h2>
+          <div className="w-12 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 mx-auto mt-4 rounded-full" />
+        </div>
 
-            <p className="leading-7 mt-3">
-              Hey there! I&apos;m <span className="font-bold">Twinkal Patel</span>, a developer who loves turning ideas into real, working products. With 2.8+ years of building web apps using React, Next.js, and Node.js, I&apos;ve learned that good code is just the start. <br /> <br />
-              Right now, I&apos;m deep into <span className="font-bold">Reloop</span>, an open source email infrastructure I&apos;m building from scratch. When I&apos;m not coding, you&apos;ll find me sketching, reading, or planning my next travel adventure.
+        <div className="grid md:grid-cols-2 gap-12">
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Get to know me</h3>
+            <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              Hey there! I&apos;m <span className="font-semibold text-neutral-900 dark:text-white">Twinkal Patel</span>, a developer who loves turning ideas into real, working products. With 2.8+ years of building web apps using React, Next.js, and Node.js, I&apos;ve learned that good code is just the start.
             </p>
-            <div className="mt-4">
-              <a
-                href="/Twinkal_P.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`bg-slate-100 px-2 py-1 rounded-lg ${
-                  theme === "dark"
-                    ? "bg-white text-black"
-                    : "bg-gray-200 text-black"
-                } `}
-              >
-                Resume
-              </a>
-            </div>
+            <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed mt-4">
+              Right now, I&apos;m deep into <span className="font-semibold text-neutral-900 dark:text-white">Reloop</span>, an open source email infrastructure I&apos;m building from scratch. When I&apos;m not coding, you&apos;ll find me sketching, reading, or planning my next travel adventure.
+            </p>
+            <a
+              href="/Twinkal_P.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-6 px-6 py-2.5 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-medium rounded-full hover:opacity-90 transition-opacity"
+            >
+              View Resume
+            </a>
           </div>
-          <div className="md:w-1/2">
-            <h1 className="text-center font-bold text-2xl md:text-left">
-              My Skills
-            </h1>
 
-            <div className="flex flex-wrap md:justify-start justify-center flex-row">
+          <div>
+            <h3 className="text-xl font-semibold mb-4">My Skills</h3>
+            <div className="flex flex-wrap gap-3">
               {skills.map((skill, index) => (
-                <div key={index}>
-                  <p className="flex justify-center items-center gap-2 bg-gray-200 text-black px-4 py-2 mt-2 mr-2 rounded font-semibold">
-                    {skill.skill}{" "}
-                    <span>
-                      {" "}
-                      <img src={skill.icon} className="w-4 h-4" />
-                    </span>
-                  </p>
+                <div
+                  key={index}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 hover:border-accent hover:shadow-md ${
+                    isDark
+                      ? "bg-neutral-800/50 border-neutral-700"
+                      : "bg-white border-neutral-200"
+                  }`}
+                >
+                  <img src={skill.icon} className="w-4 h-4" alt={skill.skill} />
+                  <span className="text-sm font-medium">{skill.skill}</span>
                 </div>
               ))}
             </div>

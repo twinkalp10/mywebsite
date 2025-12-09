@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 const Blogs = [
   {
-    title: "var, let and const in javascript",
+    title: "var, let and const",
     image: "/letvarconst.png",
     link: "https://twinkalp10.hashnode.dev/var-let-and-const",
   },
@@ -15,73 +16,89 @@ const Blogs = [
   },
   {
     title: "What is Closure?",
-    image: "closure.png",
+    image: "/closure.png",
     link: "https://twinkalp10.hashnode.dev/closure",
   },
   {
-    title: "Higher Order Functions!",
+    title: "Higher Order Functions",
     image: "/HOF.png",
     link: "https://twinkalp10.hashnode.dev/higher-order-function",
   },
   {
     title: "Class Concept in JS",
-    image: "class.png",
+    image: "/class.png",
     link: "https://twinkalp10.hashnode.dev/classes",
   },
   {
-    title: "What are map, filter and reduce methods?",
+    title: "map, filter and reduce",
     image: "/mapfilterreduce.png",
     link: "https://twinkalp10.hashnode.dev/map-reduce-and-filter",
   },
-
   {
-    title: "In this way Hosting works!",
-    image: "hosting.png",
+    title: "How Hoisting works",
+    image: "/hosting.png",
     link: "https://twinkalp10.hashnode.dev/hoisting-in-javascript",
   },
   {
-    title: "Let's go with Async/Await!",
-    image: "async.png",
+    title: "Async/Await",
+    image: "/async.png",
     link: "https://twinkalp10.hashnode.dev/asyncawait-in-javascript",
   },
   {
-    title: "call, apply, bind in javascript",
-    image: "callApplyBind.png",
+    title: "call, apply, bind",
+    image: "/callApplyBind.png",
     link: "https://twinkalp10.hashnode.dev/call-bind-and-apply-in-javascript",
   },
 ];
+
 const BlogSection = () => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDark = mounted && resolvedTheme === "dark";
+
   return (
     <section id="blogs">
-      <div className="py-12 pb-12 md:pt-36 md:pb-32">
-        <h1 className="text-3xl font-bold text-center">
-          Hello! It&apos;s my Blog Space
-        </h1>
-        <hr className="w-8 h-1 mx-auto mt-4 mb-8 bg-purple-500 border-0 rounded"></hr>
-        <p className="text-center mb-8">
-          I wrote all these blogs for my personal learning. Hope you find it
-          useful..!
-        </p>
-        <div className="flex justify-center items-center flex-col md:grid md:grid-cols-4 md:gap-x-40 md:gap-y-4">
+      <div className="py-16 md:py-24 max-w-5xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            My <span className="text-gradient">Blog</span>
+          </h2>
+          <div className="w-12 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 mx-auto mt-4 rounded-full" />
+          <p className="text-neutral-600 dark:text-neutral-400 mt-4 max-w-md mx-auto">
+            I write about JavaScript concepts for my personal learning. Hope you find them useful!
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {Blogs.map((blog, index) => (
-            <div
+            <a
               key={index}
-              className={`rounded-lg shadow-xl px-4 py-2 w-48 h-40 ${
-                theme === "dark" && "bg-[#1b1a1a] text-gray-400"
+              href={blog.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`group rounded-xl p-4 border transition-all duration-300 hover:border-accent/50 hover:shadow-lg ${
+                isDark
+                  ? "bg-neutral-900/50 border-neutral-800"
+                  : "bg-white border-neutral-200"
               }`}
             >
-              <a
-                href={blog.link}
-                target="_blank"
-                className="flex flex-col items-center justify-between h-full"
-              >
-                <img src={blog.image} alt={blog.title} className="w-32" />
-                <p className="text-sm font-semibold text-center mt-auto">
-                  {blog.title}
-                </p>
-              </a>
-            </div>
+              <div className="relative h-24 mb-3 overflow-hidden rounded-lg">
+                <Image
+                  src={blog.image}
+                  alt={blog.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-sm font-medium text-center line-clamp-2">
+                {blog.title}
+              </p>
+            </a>
           ))}
         </div>
       </div>

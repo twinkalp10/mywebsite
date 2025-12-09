@@ -1,13 +1,15 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { NavProvider } from "@/context/NavContext";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const outfit = Outfit({ 
+  subsets: ["latin"],
+  variable: '--font-outfit',
+});
 
 export default function RootLayout({
   children,
@@ -15,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${outfit.variable} font-sans`}>
         <ThemeProvider enableSystem={true} attribute="class">
           <NavProvider>
             <Navbar />
